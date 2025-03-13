@@ -9,7 +9,7 @@ resource "aws_ecs_task_definition" "this" {
   container_definitions = jsonencode([
     {
       name      = var.service_name
-      image     = "docker.io/${var.dockerhub_username}/${var.image_url}"
+      image     = "docker.io/${var.image_url}"
       cpu       = var.cpu
       memory    = var.memory
       essential = true
@@ -22,6 +22,8 @@ resource "aws_ecs_task_definition" "this" {
     }
   ])
 }
+  
+
 
 # ✅ Add ECS Service to Deploy the Task Definition
 resource "aws_ecs_service" "this" {
@@ -40,4 +42,8 @@ resource "aws_ecs_service" "this" {
   deployment_controller {
     type = "ECS"
   }
+
+
 }
+
+ 

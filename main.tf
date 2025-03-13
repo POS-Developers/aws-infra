@@ -39,7 +39,7 @@ module "backend_service" {
   service_name      = "pos-backend"
   cluster_id        = module.ecs_cluster.ecs_cluster_id
   dockerhub_username = var.dockerhub_username
-  image_url         = "mydockerhubuser/pos-backend:latest"
+  image_url         = var.backend_image_url
   cpu              = 512
   memory           = 1024
   container_port    = 8000
@@ -55,7 +55,7 @@ module "frontend_service" {
   service_name      = "pos-frontend"
   cluster_id        = module.ecs_cluster.ecs_cluster_id
   dockerhub_username = var.dockerhub_username
-  image_url         = "mydockerhubuser/pos-frontend:latest"
+  image_url         = var.frontend_image_url
   cpu              = 256
   memory           = 512
   container_port    = 5173

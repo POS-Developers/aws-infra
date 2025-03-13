@@ -43,3 +43,11 @@ variable "frontend_image_url" {
   description = "Docker Hub Image for Frontend"
   type        = string
 }
+
+
+
+variable "dockerhub_password" {
+  description = "Docker Hub password"
+  type        = string
+  sensitive   = true
+}
