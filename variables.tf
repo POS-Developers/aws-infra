@@ -33,3 +33,17 @@ variable "ssh_private_key" {
   sensitive   = true
   
 }
+
+variable "dockerhub_username" {
+  description = "Docker Hub username"
+  type        = string
+}
+variable "backend_image_url" {
+  description = "Docker Hub Image for Backend"
+  type        = string
+}
+
+variable "frontend_image_url" {
+  description = "Docker Hub Image for Frontend"
+  type        = string
+}
